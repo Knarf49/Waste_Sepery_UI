@@ -1,0 +1,35 @@
+<ResultScreen>:
+    name: "result"
+    FloatLayout:
+        # Video Player
+        Video:
+            id: res_recycle
+            source: "video/Result_Recycle.mp4"  # Path to the fourth video
+            state: "play"
+            allow_stretch: True
+            options: {"eos": "loop"}  # Loop video when it ends
+            size_hint: 1, 1
+            pos_hint: {"center_x": 0.5, "center_y": .5}
+
+
+        # Icon Button using KivyMD
+        MDFloatingActionButton:
+            icon: "home-variant"  # Replace with the desired icon name from Material Icons
+            text_color: 'white'
+            size_hint: None, None
+            size: "56dp", "56dp"
+            md_bg_color: '#1EDC5A'
+            pos_hint: {"center_x": 0.9, "center_y": 0.85}
+            elevation_normal: 1
+            on_release: app.root.current = "home"
+
+        # Button to go back to Page 2
+        MDRaisedButton:
+            text: "กลับไปดูข้อมูล"
+            pos_hint: {"center_x": .15, "center_y": 0.85}
+            size_hint: 0.2, 0.1
+            font_name: 'prompt-B'
+            font_size: "25sp"
+            md_bg_color: '#1EDC5A'
+            text_color: [1, 1, 1, 1]  # White text
+            on_release: app.root.current = "page2"
